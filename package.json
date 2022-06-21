@@ -1,5 +1,5 @@
 {
-  "name": "@solana/realms",
+  "name": "@solana/governance-sdk",
   "private": true,
   "license": "Apache-2.0",
   "type": "module",
