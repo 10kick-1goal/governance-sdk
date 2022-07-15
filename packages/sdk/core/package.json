@@ -2,10 +2,11 @@
   "name": "@solana/governance-core",
   "version": "0.0.1",
   "author": "Solana Maintainers <maintainers@solana.foundation>",
+  "description": "Interface with the SPL Governance program",
   "repository": "",
   "license": "Apache-2.0",
-  "type": "module",
   "sideEffects": false,
+  "type": "module",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.mjs",
   "types": "lib/types/index.d.ts",
@@ -26,9 +27,19 @@
   "scripts": {
     "clean": "shx rm -rf lib/*",
     "build": "yarn clean && tsc -p tsconfig.json && tsc-esm -p tsconfig.json && tsc -p tsconfig.cjs.json",
-    "postbuild": "echo '{\"type\":\"commonjs\"}' | npx json > lib/cjs/package.json && echo '{\"type\":\"module\"} ' | npx json > lib/esm/package.json"
+    "postbuild": "node scripts/postbuild && prettier --write lib"
   },
-  "peerDependencies": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@solana/spl-token": "^0.2.0",
+    "@solana/web3.js": "^1.44.2",
+    "bignumber.js": "^9.0.2",
+    "bn.js": "^5.2.1",
+    "bs58": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.0",
+    "@types/bs58": "^4.0.1",
+    "@types/node": "^18.0.0",
+    "@types/node-fetch": "^2.6.2"
+  }
 }
