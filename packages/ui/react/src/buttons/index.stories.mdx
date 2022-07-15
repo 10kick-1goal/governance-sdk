@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs';
+import * as Button from './index';
+
+<Meta title="buttons" />
+
+<style>
+  {`
+    .container {
+      align-items: center;
+      color: white;
+      display: grid;
+      grid-template-columns: max-content max-content max-content;
+      gap: 2rem 4rem;
+      margin-top: 4rem;
+    }
+
+    .heading {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .heading2 {
+      text-align: center;
+    }
+  `}
+</style>
+
+# buttons
+
+<div className="container">
+  <h3 className="heading">Name</h3>
+  <h3 className="heading heading2">Button</h3>
+  <h3 className="heading heading2">Disabled</h3>
+  <div>Primary</div>
+  <Button.Primary>Primary</Button.Primary>
+  <Button.Primary disabled>Primary</Button.Primary>
+  <div>Secondary</div>
+  <Button.Secondary>Secondary</Button.Secondary>
+  <Button.Secondary disabled>Secondary</Button.Secondary>
+  <div>Tertiary</div>
+  <Button.Tertiary>Tertiary</Button.Tertiary>
+  <Button.Tertiary disabled>Tertiary</Button.Tertiary>
+  <div>Gradient</div>
+  <Button.Gradient>Gradient</Button.Gradient>
+  <Button.Gradient disabled>Gradient</Button.Gradient>
+  <div>Dark</div>
+  <Button.Dark>Dark</Button.Dark>
+  <Button.Dark disabled>Dark</Button.Dark>
+</div>

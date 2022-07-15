@@ -1,0 +1,58 @@
+{
+  "name": "@solana/governance-ui-react",
+  "version": "0.0.1",
+  "author": "Solana Maintainers <maintainers@solana.foundation>",
+  "description": "A list of React UI components to aid in building governance UIs",
+  "repository": "",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.mjs",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.mjs",
+      "require": "./lib/cjs/index.js"
+    }
+  },
+  "files": [
+    "lib",
+    "src",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "shx rm -rf lib/*",
+    "build": "yarn clean && tsc -p tsconfig.json && tsc-esm -p tsconfig.json && tsc -p tsconfig.cjs.json && tailwindcss -c ./tailwind.config.cjs -i ./base.css -o ./styles.css",
+    "postbuild": "node scripts/postbuild",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/tailwindcss": "^3.1.0",
+    "babel-loader": "^8.2.5",
+    "tailwind-merge": "^1.4.0",
+    "tailwindcss": "^3.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
